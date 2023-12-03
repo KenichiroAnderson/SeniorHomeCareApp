@@ -13,11 +13,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 
 public class GiverProfileActivity_1 extends AppCompatActivity {
@@ -79,11 +75,27 @@ public class GiverProfileActivity_1 extends AppCompatActivity {
         emailEd.setVisibility(View.INVISIBLE);
         bannerEditOn.setVisibility(View.INVISIBLE);
 
+
+        //added by ken:
+        ImageButton listviewButtonGiver = findViewById(R.id.listviewButton_giver);
+        listviewButtonGiver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle the click event
+                openListView_giver();
+            }
+        });
+        //end of ken fragment
     }
 
-    public void openListView_giver(View view) {
-
+    private void openListView_giver() {
+        //Ken method
+        Intent intent = new Intent(this, giverprofile_list.class);
+        startActivity(intent);
     }
+
+
+
 
     public void openProfile_giver(View view) {
 
